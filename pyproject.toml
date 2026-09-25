@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humob26"
+version = "0.1.0"
+description = "Origin-destination gap-filling pipeline for the HuMob Challenge 2026"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+# Each forecaster adapter's own framework, needed only to actually run
+# `forecast --model ...` with that model; the core package (and every other
+# command) installs and runs with numpy/pandas alone. Install the extra
+# into whichever environment already has that framework's own weights and
+# hardware support set up -- these package names are a best-effort pointer,
+# not a guarantee every one is published under this name on PyPI.
+timesfm-mlx = ["mlx"]
+timesfm-torch = ["torch"]
+chronos = ["torch", "chronos-forecasting"]
+patchtst = ["torch", "einops", "granite-tsfm"]
+
+[project.scripts]
+humob26 = "humob26.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
