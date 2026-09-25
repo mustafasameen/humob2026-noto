@@ -117,7 +117,7 @@ def cmd_contexts(args):
     cache_dir = Path(args.cache)
     days, na = data.load_eval_box(None, cache=cache_dir / "eval_box.npz")
     all_dates = sorted(d for d in days if d not in na)
-    names = args.windows or list(windows.ALL_WINDOW_NAMES)
+    names = args.windows or list(windows.ALL_WINDOW_NAMES) + list(windows.SHIFT_WINDOW_NAMES)
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     for name in names:
