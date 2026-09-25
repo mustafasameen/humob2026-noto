@@ -118,6 +118,22 @@ _SHOCK_ORIGIN_EXTRA = {
 }
 SHOCK_ORIGIN_WINDOW_NAMES = ("late_jan",) + tuple(_SHOCK_ORIGIN_EXTRA)
 
+# Nine more windows built exactly like the rolling ones but starting a week
+# earlier. No modelling choice used them: they check that the rolling-window
+# results do not depend on where those windows happen to start.
+SHIFT_STARTS = ("20240422", "20240506", "20240520", "20240603", "20240617",
+                "20240701", "20240715", "20240729", "20240812")
+SHIFT_WINDOW_NAMES = tuple(f"shift_{s[4:]}" for s in SHIFT_STARTS)
+
+
+def _rolling_like(name, start, days, na, anchor_before_days=ANCHOR_BEFORE_DAYS):
+    end = (to_date(start) + dt.timedelta(days=ROLL_LENGTH_DAYS)).strftime("%Y%m%d")
+    T = [d for d in daterange(start, end) if d in days and d not in na]
+    bw = sorted(d for d in cal(T[0], anchor_before_days, -1) if d in days and d not in na)
+    aw = sorted(d for d in cal(T[-1], 30, +1) if d in days and d not in na)
+    assert len(aw) >= anchor_before_days, start
+    return Window(name, "stable", tuple(T), tuple(bw), tuple(aw))
+
 ROLL_WINDOW_NAMES = tuple(f"roll_{s[4:]}" for s in ROLL_STARTS)
 VALIDATION_WINDOW_NAMES = tuple(_CANONICAL) + tuple(n for n, _, _ in _STABLE) + ROLL_WINDOW_NAMES
 ALL_WINDOW_NAMES = VALIDATION_WINDOW_NAMES + ("test_gap",)
@@ -128,6 +144,8 @@ def get_window(name, days, na, anchor_before_days=ANCHOR_BEFORE_DAYS):
     "test_gap", or a SHOCK_ORIGIN_WINDOW_NAMES-only extra."""
     if name == "test_gap":
         return test_gap_window(anchor_before_days)
+    if name in SHIFT_WINDOW_NAMES:
+        return _rolling_like(name, SHIFT_STARTS[SHIFT_WINDOW_NAMES.index(name)], days, na, anchor_before_days)
     if name in _SHOCK_ORIGIN_EXTRA:
         target, before = _SHOCK_ORIGIN_EXTRA[name]
         return Window(name, "shock",
