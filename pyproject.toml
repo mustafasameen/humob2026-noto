@@ -16,6 +16,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
+baselines = ["scipy"]
 # Each forecaster adapter's own framework, needed only to actually run
 # `forecast --model ...` with that model; the core package (and every other
 # command) installs and runs with numpy/pandas alone. Install the extra
@@ -32,3 +33,6 @@ humob26 = "humob26.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"humob26.baselines" = ["TRANSDIM_LICENSE", "README.md"]

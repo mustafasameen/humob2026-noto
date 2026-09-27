@@ -1,0 +1,2 @@
+evaluation box : 306 days (14 not-a-number) -> cache/eval_box.npz
+full grid      : 292 days -> cache/full_grid.npz
