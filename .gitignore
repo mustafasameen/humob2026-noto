@@ -9,3 +9,5 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+# Downloaded reproduction release; asset URL and digest are in results/setup/release.json.
+results/setup/timesfm3_mlx_forecasts.tar.gz

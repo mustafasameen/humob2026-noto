@@ -7,23 +7,23 @@ from numpy.linalg import inv as inv
 
 def TRMF(sparse_mat, init_para, init_hyper, time_lags, maxiter):
     """Temporal Regularized Matrix Factorization, TRMF."""
-    
+
     ## Initialize parameters
     W = init_para["W"]
     X = init_para["X"]
     theta = init_para["theta"]
-    
+
     ## Set hyperparameters
     lambda_w = init_hyper["lambda_w"]
     lambda_x = init_hyper["lambda_x"]
     lambda_theta = init_hyper["lambda_theta"]
     eta = init_hyper["eta"]
-    
+
     dim1, dim2 = sparse_mat.shape
     observed = ~np.isnan(sparse_mat)
     sparse_mat = np.nan_to_num(sparse_mat, copy=True)
     d, rank = theta.shape
-    
+
     for it in range(maxiter):
         ## Update spatial matrix W
         for i in range(dim1):

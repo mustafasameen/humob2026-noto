@@ -15,7 +15,7 @@ from scipy.linalg import solve_triangular as solve_ut
 
 def mvnrnd_pre(mu, Lambda):
     src = normrnd(size = (mu.shape[0],))
-    return solve_ut(cholesky_upper(Lambda, overwrite_a = True, check_finite = False), 
+    return solve_ut(cholesky_upper(Lambda, overwrite_a = True, check_finite = False),
                     src, lower = False, check_finite = False, overwrite_b = True) + mu
 
 def cov_mat(mat, mat_bar):
@@ -24,17 +24,17 @@ def cov_mat(mat, mat_bar):
 
 def sample_factor_w(tau_sparse_mat, tau_ind, W, X, tau, beta0 = 1, vargin = 0):
     """Sampling N-by-R factor matrix W and its hyperparameters (mu_w, Lambda_w)."""
-    
+
     dim1, rank = W.shape
     W_bar = np.mean(W, axis = 0)
     temp = dim1 / (dim1 + beta0)
     var_W_hyper = inv(np.eye(rank) + cov_mat(W, W_bar) + temp * beta0 * np.outer(W_bar, W_bar))
     var_Lambda_hyper = wishart.rvs(df = dim1 + rank, scale = var_W_hyper)
     var_mu_hyper = mvnrnd_pre(temp * W_bar, (dim1 + beta0) * var_Lambda_hyper)
-    
+
     if dim1 * rank ** 2 > 1e+8:
         vargin = 1
-    
+
     if vargin == 0:
         var1 = X.T
         var2 = kr_prod(var1, var1)
@@ -49,7 +49,7 @@ def sample_factor_w(tau_sparse_mat, tau_ind, W, X, tau, beta0 = 1, vargin = 0):
             var_mu = Xt.T @ tau_sparse_mat[i, pos0[0]] + var_Lambda_hyper @ var_mu_hyper
             var_Lambda = tau[i] * Xt.T @ Xt + var_Lambda_hyper
             W[i, :] = mvnrnd_pre(solve(var_Lambda, var_mu), var_Lambda)
-    
+
     return W
 
 def mnrnd(M, U, V):
@@ -61,14 +61,14 @@ def mnrnd(M, U, V):
     X0 = np.random.randn(dim1, dim2)
     P = cholesky_lower(U)
     Q = cholesky_lower(V)
-    
+
     return M + P @ X0 @ Q.T
 
 def sample_var_coefficient(X, time_lags):
     dim, rank = X.shape
     d = time_lags.shape[0]
     tmax = np.max(time_lags)
-    
+
     Z_mat = X[tmax : dim, :]
     Q_mat = np.zeros((dim - tmax, rank * d))
     for k in range(d):
@@ -78,12 +78,12 @@ def sample_var_coefficient(X, time_lags):
     var_M = var_Psi @ Q_mat.T @ Z_mat
     var_S = np.eye(rank) + Z_mat.T @ Z_mat - var_M.T @ var_Psi0 @ var_M
     Sigma = invwishart.rvs(df = rank + dim - tmax, scale = var_S)
-    
+
     return mnrnd(var_M, var_Psi, Sigma), Sigma
 
 def sample_factor_x(tau_sparse_mat, tau_ind, time_lags, W, X, A, Lambda_x):
     """Sampling T-by-R factor matrix X."""
-    
+
     dim2, rank = X.shape
     tmax = np.max(time_lags)
     tmin = np.min(time_lags)
@@ -94,7 +94,7 @@ def sample_factor_x(tau_sparse_mat, tau_ind, time_lags, W, X, A, Lambda_x):
     mat0 = Lambda_x @ A.T
     mat1 = np.einsum('kij, jt -> kit', A.reshape([d, rank, rank]), Lambda_x)
     mat2 = np.einsum('kit, kjt -> ij', mat1, A.reshape([d, rank, rank]))
-    
+
     var1 = W.T
     var2 = kr_prod(var1, var1)
     var3 = (var2 @ tau_ind).reshape([rank, rank, dim2]) + Lambda_x[:, :, None]
@@ -118,7 +118,7 @@ def sample_factor_x(tau_sparse_mat, tau_ind, time_lags, W, X, A, Lambda_x):
                 n += 1
             temp0 = X[t + time_lags[index], :].T - np.einsum('ijk, ik -> jk', A0[:, :, index], temp)
             Nt = np.einsum('kij, jk -> i', mat1[index, :, :], temp0)
-        
+
         var3[:, :, t] = var3[:, :, t] + Mt
         if t < tmax:
             var3[:, :, t] = var3[:, :, t] - Lambda_x + np.eye(rank)
@@ -144,7 +144,7 @@ def compute_rmse(var, var_hat):
 
 def BTMF(sparse_mat, init, rank, time_lags, burn_iter, gibbs_iter, option = "factor"):
     """Bayesian Temporal Matrix Factorization, BTMF."""
-    
+
     dim1, dim2 = sparse_mat.shape
     d = time_lags.shape[0]
     W = init["W"]
@@ -181,5 +181,5 @@ def BTMF(sparse_mat, init, rank, time_lags, burn_iter, gibbs_iter, option = "fac
     X = X_plus / gibbs_iter
     A = A_plus / gibbs_iter
     mat_hat[mat_hat < 0] = 0
-    
+
     return mat_hat, W, X, A
