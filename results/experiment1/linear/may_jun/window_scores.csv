@@ -1,0 +1,2 @@
+window,arm,rank,n_days,combined,nrmse_diag,nrmse_offdiag
+may_jun,linear,,60,0.21895834646930099,0.10374860151286608,0.3341680914257359

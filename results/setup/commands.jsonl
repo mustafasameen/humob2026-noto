@@ -2,3 +2,6 @@
 {"command": [".venv/bin/python", "-m", "humob26", "prepare", "--data", "data/raw/humob2026-dataset.tsv", "--cache", "cache/"], "exit_code": 0, "time": "2026-09-27T19:03:13.010064+00:00"}
 {"command": [".venv/bin/python", "-m", "humob26", "contexts", "--cache", "cache/", "--out", "forecasts/timesfm3_mlx/"], "exit_code": 0, "time": "2026-09-27T19:03:14.165210+00:00"}
 {"command": [".venv/bin/python", "-m", "humob26", "evaluate", "--cache", "cache/", "--forecasts", "forecasts/timesfm3_mlx/", "--windows", "may_jun", "--out", "results/check/"], "exit_code": 0, "time": "2026-09-27T19:03:39.827899+00:00"}
+{"command": [".venv/bin/pip", "install", "scipy"], "exit_code": 0, "recorded_utc": "2026-09-27T19:20:42.173479+00:00"}
+{"command": [".venv/bin/python", "-m", "pytest", "-q"], "exit_code": 0, "recorded_utc": "2026-09-27T19:20:42.173549+00:00"}
+{"command": [".venv/bin/python", "scripts/experiment1.py"], "exit_code": 0, "recorded_utc": "2026-09-27T19:20:42.173561+00:00"}

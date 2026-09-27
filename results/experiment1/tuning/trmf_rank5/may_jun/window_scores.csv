@@ -1,0 +1,2 @@
+window,arm,rank,n_days,combined,nrmse_diag,nrmse_offdiag
+may_jun,trmf,5,60,0.8748616189392077,0.8715642719777961,0.8781589659006193

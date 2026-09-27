@@ -1,0 +1,2 @@
+window,arm,rank,n_days,combined,nrmse_diag,nrmse_offdiag
+april,btmf,10,28,0.22257962953571347,0.11138849604677362,0.33377076302465336

@@ -1,0 +1,12 @@
+{
+  "btmf": {
+    "rank": 10,
+    "may_jun_combined": 0.222901380269309,
+    "selection_window": "may_jun"
+  },
+  "trmf": {
+    "rank": 5,
+    "may_jun_combined": 0.8748616189392077,
+    "selection_window": "may_jun"
+  }
+}

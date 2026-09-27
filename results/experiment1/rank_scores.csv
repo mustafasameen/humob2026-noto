@@ -1,0 +1,7 @@
+method,rank,combined,path
+btmf,5,0.2231900530170044,results/experiment1/tuning/btmf_rank5/may_jun
+btmf,10,0.222901380269309,results/experiment1/tuning/btmf_rank10/may_jun
+btmf,20,0.2287056463318535,results/experiment1/tuning/btmf_rank20/may_jun
+trmf,5,0.8748616189392077,results/experiment1/tuning/trmf_rank5/may_jun
+trmf,10,0.8877052155000067,results/experiment1/tuning/trmf_rank10/may_jun
+trmf,20,0.8883669778488388,results/experiment1/tuning/trmf_rank20/may_jun

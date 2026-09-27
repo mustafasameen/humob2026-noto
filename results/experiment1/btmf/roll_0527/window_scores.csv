@@ -1,0 +1,2 @@
+window,arm,rank,n_days,combined,nrmse_diag,nrmse_offdiag
+roll_0527,btmf,10,58,0.22599242610623238,0.11752483451237573,0.33446001770008904

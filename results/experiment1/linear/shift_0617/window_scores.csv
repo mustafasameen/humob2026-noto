@@ -1,0 +1,2 @@
+window,arm,rank,n_days,combined,nrmse_diag,nrmse_offdiag
+shift_0617,linear,,59,0.22526847806445222,0.11111151900808465,0.3394254371208198

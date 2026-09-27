@@ -1,0 +1,2 @@
+window,arm,rank,n_days,combined,nrmse_diag,nrmse_offdiag
+late_jan,btmf,10,7,0.2456308659997864,0.1366589830396839,0.35460274895988886
