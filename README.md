@@ -40,15 +40,17 @@ splits between origins and destinations.
   for pairs with an end outside the evaluation box use the interpolation
   and smoother built on the whole grid, since nothing else ever sees them.
 
-Seven named arms cover the organisers' own published baselines, each model
+Nine named arms cover the organisers' own published baselines, each model
 component alone, and the full stack: `april_mean`, `novdec_mean` (flat
 per-pair means over the after- and before-anchor, the organisers'
-construction), `anchor` (interpolation alone), `anchor_rts` (interpolation
-+ smoother), `anchor_rts_fullgrid` (the same, built on the whole grid and
-restricted back to the evaluation box), `anchor_rts_fm` (`anchor_rts` with
-the foundation-model diagonal), and `final` (the empirical-Bayes
-interpolation variant + smoother + foundation-model diagonal: the full
-method).
+construction), `after_mean_dow` (the after-anchor mean with the
+interpolation's day-type and holiday factors), `anchor` (interpolation
+alone), `anchor_rts` (interpolation + smoother), `anchor_rts_fullgrid` (the
+same, built on the whole grid and restricted back to the evaluation box),
+`anchor_rts_eb` (`anchor_rts` with the empirical-Bayes interpolation
+variant), `anchor_rts_fm` (`anchor_rts` with the foundation-model
+diagonal), and `final` (the empirical-Bayes interpolation variant +
+smoother + foundation-model diagonal: the full method).
 
 ## External recovery records
 
