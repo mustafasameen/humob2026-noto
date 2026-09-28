@@ -1,0 +1,7 @@
+Compared `run_001/full/fc_april.npz` with `run_001/fwd14/fc_april.npz` by exact array equality.
+All three forward arrays changed; all three backward arrays were byte-for-byte equal as NumPy arrays.
+Command: `.venv/bin/python -` with `np.load`, `np.array_equal`, and assertions for each of fwd, fwd_q10, fwd_q90, bwd, bwd_q10, bwd_q90.
+This verifies the runner changed only the requested leg for a representative window; numeric comparisons are in the task transcript.
+For `fwd28` on `roll_0429`, the full and cut forward arrays were exactly equal because the exported forward context has only 28 days. On `roll_0513` and `roll_0527`, forward arrays changed and backward arrays were exactly equal. Early May–June checks: full 0.20291035383556955; fwd14 0.2032620288912801; fwd28 0.2028871238845999. Commands and CSVs are retained in the named early-check folders.
+`fwd56` on `may_jun` produced all six forecast arrays exactly equal to full context, as expected because that window has only 30 forward context days.
+For `bwd30` on `may_jun`, all three forward arrays were exactly equal to full context, while all three backward arrays changed. The May–June score was 0.203339841254431; the command and CSV are retained in `early_bwd30`.

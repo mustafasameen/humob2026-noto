@@ -1,0 +1,4 @@
+window,arm_a,arm_b,component,mean_diff,pct_of_a,ci_lo,ci_hi,reps
+may_jun,final,final,combined,0.0,0.0,0.0,0.0,4000
+may_jun,final,final,diag,0.0,0.0,0.0,0.0,4000
+may_jun,final,final,offdiag,0.0,0.0,0.0,0.0,4000

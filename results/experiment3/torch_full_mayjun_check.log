@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task3/src/humob26/__main__.py", line 5, in <module>
+    main()
+    ~~~~^^
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task3/src/humob26/cli.py", line 505, in main
+    args.func(args)
+    ~~~~~~~~~^^^^^^
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task3/src/humob26/cli.py", line 158, in cmd_evaluate
+    pred = pipe.build(arm, w)
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task3/src/humob26/cli.py", line 98, in build
+    self.forecast_diag(window), s)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task3/src/humob26/cli.py", line 72, in forecast_diag
+    raise FileNotFoundError(f"window {window.name!r}: expected forecast files {ctx_path} and {fc_path}")
+FileNotFoundError: window 'may_jun': expected forecast files results/experiment3/run_001/full/ctx_may_jun.npz and results/experiment3/run_001/full/fc_may_jun.npz

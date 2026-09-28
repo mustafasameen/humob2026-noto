@@ -1,0 +1,5 @@
+Loading weights from local directory
+planted forward  n=92: worst RMSE/sd 0.0255 -> PASS
+planted reversed n=214: worst RMSE/sd 0.0112 -> PASS
+may_jun        series 921
+wrote 1 forecast files -> results/experiment3/benchmark/forecasts

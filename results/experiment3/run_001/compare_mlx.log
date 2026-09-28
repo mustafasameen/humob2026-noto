@@ -1,0 +1,17 @@
+   window       geometry  n_days        arm  reference  combined    pct_better  diag_reference     diag      off
+  may_jun       adjacent      60 torch_full   0.202910  0.202910  2.596670e-07        0.087068 0.087068 0.318752
+ late_jan adjacent,trend       7 torch_full   0.205483  0.205483 -1.656925e-05        0.092714 0.092714 0.318252
+    april          trend      28 torch_full   0.203035  0.203029  2.866360e-03        0.089693 0.089681 0.316377
+  january          shock      28 torch_full   0.336534  0.336535 -3.688145e-04        0.227097 0.227100 0.445970
+roll_0429         stable      59 torch_full   0.203527  0.203527  2.873988e-07        0.087087 0.087087 0.319966
+roll_0513         stable      58 torch_full   0.207422  0.207422  8.618025e-07        0.097568 0.097568 0.317276
+roll_0527         stable      58 torch_full   0.209406  0.209406 -1.061691e-07        0.099204 0.099204 0.319608
+roll_0610         stable      59 torch_full   0.210707  0.210707  7.640187e-08        0.097515 0.097515 0.323899
+roll_0624         stable      59 torch_full   0.209962  0.209962  5.551646e-08        0.099972 0.099972 0.319951
+roll_0708         stable      59 torch_full   0.206443  0.206443  5.743961e-07        0.097998 0.097998 0.314888
+roll_0722         stable      60 torch_full   0.204250  0.204250 -6.240908e-07        0.097712 0.097712 0.310788
+roll_0805         stable      60 torch_full   0.202873  0.202873  4.232163e-07        0.097951 0.097951 0.307795
+roll_0819         stable      60 torch_full   0.206070  0.206070  3.647411e-07        0.099851 0.099851 0.312289
+       arm   pooled_diff         ci_lo        ci_hi   pooled_pct  may_jun_pct  harm_may_jun  harm_late_jan  harm_april  offset_gate verdict
+torch_full -4.356445e-10 -9.312350e-10 1.930270e-11 2.107411e-07 2.596670e-07         False          False       False         True    FAIL
+wrote bakeoff_windows.csv, bakeoff_summary.csv, bakeoff_gates.csv -> results/experiment3/run_001/mlx_comparison

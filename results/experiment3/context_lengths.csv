@@ -1,0 +1,14 @@
+window,forward_days,backward_days,fwd14_truncates,fwd28_truncates,fwd56_truncates,bwd30_truncates,bwd60_truncates,bwd120_truncates
+may_jun,30,123,True,True,False,True,True,True
+late_jan,83,214,True,True,True,True,True,True
+april,92,184,True,True,True,True,True,True
+january,61,214,True,True,True,True,True,True
+roll_0429,28,126,True,False,False,True,True,True
+roll_0513,42,112,True,True,False,True,True,False
+roll_0527,56,98,True,True,False,True,True,False
+roll_0610,70,84,True,True,True,True,True,False
+roll_0624,84,70,True,True,True,True,True,False
+roll_0708,98,56,True,True,True,True,False,False
+roll_0722,112,42,True,True,True,True,False,False
+roll_0805,126,28,True,True,True,False,False,False
+roll_0819,140,14,True,True,True,False,False,False

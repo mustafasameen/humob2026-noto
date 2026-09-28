@@ -1,0 +1,6 @@
+torch 2.14.0 mps False
+Loading weights from local directory
+loaded_seconds 2.826972246170044
+planted forward  n=92: worst RMSE/sd 0.0255 -> PASS
+planted reversed n=214: worst RMSE/sd 0.0112 -> PASS
+elapsed_seconds 4.243930101394653

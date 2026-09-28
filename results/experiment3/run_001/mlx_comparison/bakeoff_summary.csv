@@ -1,0 +1,2 @@
+arm,pooled_diff,ci_lo,ci_hi,pooled_pct,may_jun_pct,harm_may_jun,harm_late_jan,harm_april,offset_gate,verdict
+torch_full,-4.356445319357259e-10,-9.312350261050235e-10,1.9302695723902317e-11,2.1074110887100124e-07,2.5966696570733916e-07,False,False,False,True,FAIL

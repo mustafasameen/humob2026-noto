@@ -1,0 +1,17 @@
+Loading weights from local directory
+planted forward  n=92: worst RMSE/sd 0.0255 -> PASS
+planted reversed n=214: worst RMSE/sd 0.0112 -> PASS
+april          series 1071
+january        series 1067
+late_jan       series 961
+may_jun        series 921
+roll_0429      series 927
+roll_0513      series 947
+roll_0527      series 918
+roll_0610      series 920
+roll_0624      series 919
+roll_0708      series 900
+roll_0722      series 884
+roll_0805      series 870
+roll_0819      series 810
+wrote 13 forecast files -> results/experiment3/run_001/fwd14
