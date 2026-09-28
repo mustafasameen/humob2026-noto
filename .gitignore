@@ -9,3 +9,8 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+# Local caches, forecasts, model weights and run results
+/cache
+/forecasts
+/models
+/results

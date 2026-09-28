@@ -21,6 +21,7 @@ touches only pairs with both ends in the box.
 from __future__ import annotations
 
 import ast
+import hashlib
 from collections import defaultdict
 from pathlib import Path
 
@@ -130,3 +131,19 @@ def verify_outbox_unchanged(out_path, base_lines, target_dates):
                 if not (in_eval_box_gid(o) and in_eval_box_gid(dest)):
                     diffs += dest not in base_raw[d].get(o, {})
     return diffs
+
+
+def rounded_digest(path, decimals=6):
+    """MD5 of a submission with every value rounded to `decimals` places.
+
+    The in-box entries are written at full precision, so their last digits
+    can differ between machines whose linear-algebra libraries round
+    differently; rounding to six places removes those differences."""
+    h = hashlib.md5()
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            date, payload = line.rstrip("\r\n").split("\t", 1)
+            items = sorted((o, d, round(v, decimals))
+                           for o, row in ast.literal_eval(payload).items() for d, v in row.items())
+            h.update(f"{date}\t{items}\n".encode())
+    return h.hexdigest()
