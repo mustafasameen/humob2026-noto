@@ -23,7 +23,7 @@ test = ["pytest"]
 # hardware support set up -- these package names are a best-effort pointer,
 # not a guarantee every one is published under this name on PyPI.
 timesfm-mlx = ["mlx"]
-timesfm-torch = ["torch"]
+timesfm-torch = ["torch", "timesfm==3.0.2"]
 chronos = ["torch", "chronos-forecasting"]
 patchtst = ["torch", "einops", "granite-tsfm"]
 
