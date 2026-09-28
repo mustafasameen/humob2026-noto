@@ -181,7 +181,7 @@ def summarize(daily, reps=config.BOOTSTRAP_REPS, seed=config.BOOTSTRAP_SEED):
     return pd.DataFrame(rows)
 
 
-def plot_shares(daily, summary, output):
+def plot_shares(daily, summary, output, reconstruction_verified=True):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -220,6 +220,9 @@ def plot_shares(daily, summary, output):
     fig.suptitle('Municipality activity shares around the missing period', x=.065, ha='left',
                  fontsize=17, fontweight='bold', y=.98)
     fig.text(.065, .943, 'Within-cell flows / all-row daily total  |  November 2023 - April 2024  |  Each panel has its own scale', fontsize=10)
+    if not reconstruction_verified:
+        fig.text(.065, .917, 'PROVISIONAL reconstruction: final submission MD5 differs from the published reference.',
+                 fontsize=9, color='#954217', fontweight='bold')
     fig.legend(handles=[Line2D([0], [0], color='#16465c', label='Observed'),
                         Line2D([0], [0], color='#bc541e', label='Reconstructed'),
                         Line2D([0], [0], color='#747b80', ls=':', label='Halfway between anchor means'),

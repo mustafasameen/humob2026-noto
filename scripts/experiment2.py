@@ -83,8 +83,14 @@ def verify_outputs(daily, summary, mapping, totals):
 
 def write_report(summary, audit, out):
     lines = ['# Experiment 2: recovery by municipality', '',
-             'The original submission was regenerated from the released MLX forecasts and its MD5 matched '
-             f'`{EXPECTED_SUBMISSION_MD5}`. The preceding May–June reproduction scored 0.202910 to six decimals.', '',
+             ('The original submission was regenerated from the released MLX forecasts and its MD5 matched '
+              f'`{EXPECTED_SUBMISSION_MD5}`.' if audit['submission_md5_matches'] else
+              '**PROVISIONAL reconstruction:** the final submission MD5 does not match the published reference. '
+              f'Actual: `{audit["submission_md5"]}`; expected: `{EXPECTED_SUBMISSION_MD5}`. '
+              'The full-grid intermediate matches its published MD5, and the submission round-trip checks pass. '
+              'The cause of the final-file mismatch is unresolved; halfway dates require a reference-file comparison. '
+              'Observed anchor shares and ratios do not depend on the submission.'),
+             'The preceding May–June reproduction scored 0.202910 to six decimals.', '',
              '## Anchor comparison and reconstructed halfway dates', '',
              'Shares are fractions of the complete daily flow total. Percentages below multiply those fractions by 100; '
              'the ratio is April mean share divided by January mean share.', '',
@@ -121,6 +127,9 @@ def main():
     p.add_argument('--data', default='data/raw/humob2026-dataset.tsv')
     p.add_argument('--forecasts', default='forecasts/timesfm3_mlx')
     p.add_argument('--out', required=True, help='new output directory; existing attempts are never overwritten')
+    p.add_argument('--allow-submission-md5-mismatch', action='store_true',
+                   help='explicitly produce PROVISIONAL reconstruction outputs after a final-file MD5 mismatch; '
+                        'May–June and full-grid checks remain mandatory')
     args = p.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=False)
@@ -162,22 +171,32 @@ def main():
                                ('submission.fullgrid.tsv', EXPECTED_FULLGRID_MD5)]:
             actual = digest(out / name, 'md5')
             meta[name + '_md5'] = actual
-            if actual != expected:
+            if actual != expected and (name != 'submission.tsv' or not args.allow_submission_md5_mismatch):
                 raise ValueError(f'{name} MD5 {actual} differs from reference {expected}')
+        verified = meta['submission.tsv_md5'] == EXPECTED_SUBMISSION_MD5
+        meta['submission_md5_matches'] = verified
+        if not verified:
+            print('WARNING: final submission MD5 mismatch; reconstruction outputs are PROVISIONAL', flush=True)
         daily, mapping, totals = recovery.build_daily(args.data, out / 'submission.tsv')
         summary = recovery.summarize(daily)
+        daily['reference_status'] = np.where(daily.source == 'reconstructed',
+            'md5_verified' if verified else 'provisional_md5_mismatch', 'not_applicable')
+        summary['halfway_reference_status'] = np.where(summary.halfway_status == 'reached',
+            'md5_verified' if verified else 'provisional_md5_mismatch', 'not_applicable')
         audit = verify_outputs(daily, summary, mapping, totals)
         audit['reproduction_combined'] = float(score.iloc[0])
         audit['submission_md5'] = meta['submission.tsv_md5']
         audit['fullgrid_md5'] = meta['submission.fullgrid.tsv_md5']
+        audit['submission_md5_matches'] = verified
+        audit['expected_submission_md5'] = EXPECTED_SUBMISSION_MD5
         write_json(out / 'verification.json', audit)
         daily.to_csv(out / 'daily_shares.csv', index=False)
         summary.to_csv(out / 'municipality_summary.csv', index=False)
         mapping.to_csv(out / 'cell_to_municipality.csv', index=False)
         totals.to_csv(out / 'daily_totals.csv', index=False)
-        recovery.plot_shares(daily, summary, out)
+        recovery.plot_shares(daily, summary, out, reconstruction_verified=verified)
         write_report(summary, audit, out)
-        meta['status'] = 'success'
+        meta['status'] = 'success' if verified else 'provisional'
         print(summary.to_string(index=False))
     except BaseException:
         meta['status'] = 'failed'
@@ -186,7 +205,7 @@ def main():
         pd.DataFrame([{'status': 'failed', 'error': meta['error']}]).to_csv(out / 'failure.csv', index=False)
         print(meta['error'], file=sys.stderr)
     meta['elapsed_seconds'] = time.monotonic() - start
-    meta['exit_code'] = 0 if meta['status'] == 'success' else 1
+    meta['exit_code'] = 0 if meta['status'] in ('success', 'provisional') else 1
     write_json(out / 'run.json', meta)
     # Manifest excludes itself; all other run files are hashed, including local TSV/NPZ.
     write_json(out / 'checksums.json', {str(f.relative_to(out)): {'sha256': digest(f), 'bytes': f.stat().st_size}
