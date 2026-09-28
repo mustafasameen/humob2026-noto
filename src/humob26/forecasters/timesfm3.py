@@ -35,18 +35,13 @@ class TimesFM3Adapter(Forecaster):
         self.backend = backend
 
     @classmethod
-    def from_pretrained(cls, weights_dir, backend="mlx"):
+    def from_pretrained(cls, weights_dir, backend="mlx", device=None):
         if backend == "mlx":
             from timesfm3.mlx import TimesFM3Forecaster
             return cls(TimesFM3Forecaster.from_pretrained(weights_dir), backend)
         if backend == "torch":
-            # No torch-based TimesFM-3 backend was ported: none of the
-            # source scripts this package was built from use one, so there
-            # is nothing to port verbatim. The mlx backend is the only one
-            # implemented here.
-            raise NotImplementedError(
-                "the torch backend has no verbatim reference implementation in this "
-                "package; use --backend mlx")
+            from timesfm3.torch import TimesFM3Forecaster
+            return cls(TimesFM3Forecaster.from_pretrained(str(weights_dir), device=device), backend)
         raise ValueError(f"unknown backend {backend!r}")
 
     def predict(self, contexts, horizon: int):
