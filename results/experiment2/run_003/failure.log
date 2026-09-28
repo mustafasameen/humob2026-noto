@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2/scripts/experiment2.py", line 149, in main
+    meta['inputs'] = {str(f): {'resolved_path': str(f.resolve()), 'bytes': f.stat().st_size,
+                                                                           ~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 654, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/raw/humob2026-dataset.tsv'

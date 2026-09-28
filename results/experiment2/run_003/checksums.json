@@ -1,0 +1,14 @@
+{
+  "failure.csv": {
+    "sha256": "8fbe1b3c55e1fa65bf436e644f553a5b583402c676d610fa46eac7fe7e130f3a",
+    "bytes": 703
+  },
+  "failure.log": {
+    "sha256": "e0144bff8b02c84190e19190aac5aca5725dd6400ab09d4ff79dab5089f5ca51",
+    "bytes": 676
+  },
+  "run.json": {
+    "sha256": "e39f8e51360216ece02ae74e62f74d3fe5cee265203db8eeacb8a95a27c998b9",
+    "bytes": 4457
+  }
+}
