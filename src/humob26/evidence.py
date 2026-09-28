@@ -146,4 +146,4 @@ def build_final_evidence(days, window, na, keys, train, calib, forecast_diag, mu
     r = build_rts(days, window, na, keys, train, rank=s.rts_rank)
     base = blend(a, r, s.anchor_rts_blend, window.target)
     return weighted_sum(diagonal_part(forecast_diag, True), diagonal_part(base, True), diagonal_part(base, False),
-                        weights=[s.fm_diagonal_weight, s.fm_diagonal_weight, 1.0])
+                        weights=[s.fm_diagonal_weight, 1.0 - s.fm_diagonal_weight, 1.0])

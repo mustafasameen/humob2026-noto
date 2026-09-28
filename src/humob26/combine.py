@@ -219,7 +219,7 @@ def build_anchor_rts_fm(days, window, na, keys, train, calib, forecast_diag, set
     s = settings or DEFAULT_SETTINGS
     base = build_anchor_rts(days, window, na, keys, train, calib, s)
     return weighted_sum(diagonal_part(forecast_diag, True), diagonal_part(base, True), diagonal_part(base, False),
-                        weights=[s.fm_diagonal_weight, s.fm_diagonal_weight, 1.0])
+                        weights=[s.fm_diagonal_weight, 1.0 - s.fm_diagonal_weight, 1.0])
 
 
 def build_final(days, window, na, keys, train, calib, forecast_diag, settings=None):
@@ -229,7 +229,7 @@ def build_final(days, window, na, keys, train, calib, forecast_diag, settings=No
     s = settings or DEFAULT_SETTINGS
     base = build_anchor_rts_eb(days, window, na, keys, train, calib, s)
     return weighted_sum(diagonal_part(forecast_diag, True), diagonal_part(base, True), diagonal_part(base, False),
-                        weights=[s.fm_diagonal_weight, s.fm_diagonal_weight, 1.0])
+                        weights=[s.fm_diagonal_weight, 1.0 - s.fm_diagonal_weight, 1.0])
 
 
 ARM_NAMES = ("april_mean", "novdec_mean", "anchor", "anchor_rts",
