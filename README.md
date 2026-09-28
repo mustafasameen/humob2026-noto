@@ -104,12 +104,17 @@ python -m humob26 submit   --cache ./cache --forecasts ./forecasts --out submiss
 `<out>.fullgrid.tsv`) covering every pair on the whole grid; the final
 submission is that file with every evaluation-box pair replaced by the
 `final` arm's predictions at full precision. Rebuilding from the same
-dataset and forecasts reproduces the submitted file byte for byte:
+dataset and forecasts reproduces the submitted file:
 
 | file                     | expected md5                      |
 |--------------------------|------------------------------------|
 | `submission.tsv`         | `f19bfbd37dd859e0c0e928ffd0f83c5a` |
+| `submission.tsv`, values rounded to six decimals (`humob26.submission.rounded_digest`) | `f96f76dfcf777b36fff319e9292e8fe1` |
 | `submission.fullgrid.tsv`| `be03ccbf5aaebd81a275b3a52953504f` |
+
+The in-box values are written at full precision, so a machine whose
+linear-algebra library rounds differently can change their last digits and
+the file's exact md5; the rounded digest and the full-grid file do not change.
 
 ## Forecasts
 
