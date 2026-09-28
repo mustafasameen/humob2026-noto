@@ -1,0 +1,6 @@
+submitted            overrides={}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.0, 'ci_lo': 0.0, 'ci_hi': 0.0}
+  submitted-configuration reproduction check: max abs diff 1.388e-16 -> PASS
+rank4                overrides={'rts_rank': 4}  pooled diff vs submitted: {'pooled_diff_vs_submitted': -0.00011895005104874561, 'ci_lo': -0.0003007082829417161, 'ci_hi': 6.145019146705779e-05}
+rank8                overrides={'rts_rank': 8}  pooled diff vs submitted: {'pooled_diff_vs_submitted': -4.9249515445739045e-05, 'ci_lo': -0.00011661146802868013, 'ci_hi': 1.649954979759913e-05}
+rank24               overrides={'rts_rank': 24}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 5.615737104086953e-05, 'ci_lo': -1.974267215803638e-05, 'ci_hi': 0.0001346664434844008}
+wrote sweep_<name>.csv -> results/experiment4/run_005/rts_rank

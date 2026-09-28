@@ -1,0 +1,12 @@
+WARNING: The directory '/Users/mrunal/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+-e git+https://github.com/mustafasameen/humob2026-noto.git@a55946a03bb9cdb438bada9eacd0d7f0e39cdc3c#egg=humob26
+iniconfig==2.3.0
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.6
+pluggy==1.6.0
+Pygments==2.21.0
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+scipy==1.18.1
+six==1.17.0

@@ -1,0 +1,5 @@
+submitted            overrides={}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.0, 'ci_lo': 0.0, 'ci_hi': 0.0}
+  submitted-configuration reproduction check: max abs diff 1.388e-16 -> PASS
+tau7.588             overrides={'single_tau': 7.588}  pooled diff vs submitted: {'pooled_diff_vs_submitted': -1.8260860923841455e-05, 'ci_lo': -4.334494198987042e-05, 'ci_hi': 5.6979595974144865e-06}
+tau26.88             overrides={'single_tau': 26.88}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 2.1377597512001345e-05, 'ci_lo': 5.366549624194913e-06, 'ci_hi': 3.807962571753007e-05}
+wrote sweep_<name>.csv -> results/experiment4/run_005/single_tau

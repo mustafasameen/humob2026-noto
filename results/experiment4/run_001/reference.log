@@ -1,0 +1,18 @@
+may_jun        april_mean=0.221445  novdec_mean=0.229462  anchor=0.206217  anchor_rts=0.203695  anchor_rts_fullgrid=0.205902  anchor_rts_fm=0.203032  final=0.202910
+late_jan       april_mean=0.246556  novdec_mean=0.223429  anchor=0.222942  anchor_rts=0.209467  anchor_rts_fullgrid=0.215804  anchor_rts_fm=0.205429  final=0.205483
+april          april_mean=0.216080  novdec_mean=0.256646  anchor=0.209033  anchor_rts=0.204918  anchor_rts_fullgrid=0.207100  anchor_rts_fm=0.203185  final=0.203035
+january        april_mean=0.317701  novdec_mean=0.349163  anchor=0.309405  anchor_rts=0.334967  anchor_rts_fullgrid=0.324297  anchor_rts_fm=0.336549  final=0.336534
+stable_spring  april_mean=0.222337  novdec_mean=0.230843  anchor=0.208064  anchor_rts=0.205139  anchor_rts_fullgrid=0.206229  anchor_rts_fm=0.206059  final=0.205790
+stable_summer  april_mean=0.227845  novdec_mean=0.232631  anchor=0.211178  anchor_rts=0.208723  anchor_rts_fullgrid=0.210827  anchor_rts_fm=0.208280  final=0.208228
+stable_late    april_mean=0.217313  novdec_mean=0.227861  anchor=0.205981  anchor_rts=0.204465  anchor_rts_fullgrid=0.206724  anchor_rts_fm=0.204462  final=0.204323
+roll_0429      april_mean=0.221215  novdec_mean=0.229159  anchor=0.206743  anchor_rts=0.204691  anchor_rts_fullgrid=0.206485  anchor_rts_fm=0.203663  final=0.203527
+roll_0513      april_mean=0.221924  novdec_mean=0.233254  anchor=0.209216  anchor_rts=0.207579  anchor_rts_fullgrid=0.209985  anchor_rts_fm=0.207609  final=0.207422
+roll_0527      april_mean=0.227683  novdec_mean=0.228520  anchor=0.212121  anchor_rts=0.210175  anchor_rts_fullgrid=0.211007  anchor_rts_fm=0.209548  final=0.209406
+roll_0610      april_mean=0.230553  novdec_mean=0.229162  anchor=0.212605  anchor_rts=0.211696  anchor_rts_fullgrid=0.211800  anchor_rts_fm=0.210822  final=0.210707
+roll_0624      april_mean=0.228715  novdec_mean=0.230669  anchor=0.212399  anchor_rts=0.210606  anchor_rts_fullgrid=0.211627  anchor_rts_fm=0.209993  final=0.209962
+roll_0708      april_mean=0.226835  novdec_mean=0.235748  anchor=0.211270  anchor_rts=0.209199  anchor_rts_fullgrid=0.208182  anchor_rts_fm=0.206521  final=0.206443
+roll_0722      april_mean=0.222816  novdec_mean=0.224208  anchor=0.207271  anchor_rts=0.204493  anchor_rts_fullgrid=0.204915  anchor_rts_fm=0.204318  final=0.204250
+roll_0805      april_mean=0.215241  novdec_mean=0.233538  anchor=0.205165  anchor_rts=0.203322  anchor_rts_fullgrid=0.203498  anchor_rts_fm=0.202966  final=0.202873
+roll_0819      april_mean=0.219152  novdec_mean=0.235393  anchor=0.208430  anchor_rts=0.205832  anchor_rts_fullgrid=0.206147  anchor_rts_fm=0.206282  final=0.206070
+wrote results/experiment4/run_001/reference/daily_scores.csv, results/experiment4/run_001/reference/window_scores.csv
+wrote results/experiment4/run_001/reference/comparisons.csv

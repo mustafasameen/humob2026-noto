@@ -1,0 +1,9 @@
+{
+  "submitted": {},
+  "weight0.25": {
+    "fm_diagonal_weight": 0.25
+  },
+  "weight1.0": {
+    "fm_diagonal_weight": 1.0
+  }
+}

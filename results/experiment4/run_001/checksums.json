@@ -1,0 +1,12 @@
+{
+  "commands.jsonl": "d72e79553fd2eb2f06f295478136890b94f599ade7549b326223d05d4717a560",
+  "failure.csv": "00312d83b36653fdb24c95180393f650bfba85c0987fc5dcb0f95024d9dba5a0",
+  "failure.log": "97afdcbd42de14a6daeaed64d4032f404ae0743b9e0f205dd4afc19f401b838e",
+  "packages.log": "6dcce18ad3361b2888b6f52ca9a774305aa8aba731ce16b77fed018c893939df",
+  "packages.txt": "6dcce18ad3361b2888b6f52ca9a774305aa8aba731ce16b77fed018c893939df",
+  "reference/comparisons.csv": "2b3c7a2583389eb4441bb2bb133920d224de5c23bb9d45d09d30d0a0626baa66",
+  "reference/daily_scores.csv": "86bc47f7248af27b1296935c927bace8e857e54b59f4e7b480e88a146f93fde7",
+  "reference/window_scores.csv": "742409df315cd5ab8e64b571b6317e5436903e6976d3520d5e199034b33cd258",
+  "reference.log": "4e99db870c589f60d6caaa676b661bb8973fe6dfa281a9060acc6aa1a8472acf",
+  "run.json": "b8dc8103873013219cb40d944e6770a535a7121ec488aa3a4cf608b993d82746"
+}

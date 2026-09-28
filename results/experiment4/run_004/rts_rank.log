@@ -1,0 +1,3 @@
+sweep's submitted-configuration row does not reproduce the phase-1 reference
+submitted            overrides={}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.0, 'ci_lo': 0.0, 'ci_hi': 0.0}
+  submitted-configuration reproduction check: max abs diff 5.361e-02 -> FAIL

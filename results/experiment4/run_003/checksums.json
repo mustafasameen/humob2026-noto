@@ -1,0 +1,15 @@
+{
+  "commands.jsonl": "480504de804fc2f343b5d7c6abd931ed12a6b14f1532abbda27f802ee50f8461",
+  "failure.csv": "1151c6ded6966ad3696cb9176afb913fac7656ee93052a7bd08ea2f25f1b720f",
+  "failure.log": "2522869ac05fc6fd33a13fc120cf908d6d22a46ecd8b434fffb22d79df4dfc17",
+  "packages.log": "6dcce18ad3361b2888b6f52ca9a774305aa8aba731ce16b77fed018c893939df",
+  "packages.txt": "6dcce18ad3361b2888b6f52ca9a774305aa8aba731ce16b77fed018c893939df",
+  "reference/comparisons.csv": "2b3c7a2583389eb4441bb2bb133920d224de5c23bb9d45d09d30d0a0626baa66",
+  "reference/daily_scores.csv": "86bc47f7248af27b1296935c927bace8e857e54b59f4e7b480e88a146f93fde7",
+  "reference/window_scores.csv": "742409df315cd5ab8e64b571b6317e5436903e6976d3520d5e199034b33cd258",
+  "reference.log": "79eab06c949e5ac5d0b1eaa8b4996f7621e9b83f93dea44a6dbf92de93a89c2b",
+  "rts_rank/sweep_submitted.csv": "c3ab160703723cbbecb92e3f9c4e693dfa08aaad776d3a10f82608225dd431f3",
+  "rts_rank.json": "4c3ac1ec0d2a7a656c3a7f1019fcf6380c7fe1194cda7c11b22a3612b3650202",
+  "rts_rank.log": "8a22f63f4e0c0c73f4994bb9ae87c69efa41d372bfa73780d64d7fea98e35e13",
+  "run.json": "bd7c7f5b8334ad86178b156f4554d32bbf2ea236f9020e96b3f49fec6f626f9f"
+}

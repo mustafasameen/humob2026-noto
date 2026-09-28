@@ -9,3 +9,7 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+
+/cache
+/forecasts
+/data

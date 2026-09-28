@@ -1,0 +1,5 @@
+submitted            overrides={}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.0, 'ci_lo': 0.0, 'ci_hi': 0.0}
+  submitted-configuration reproduction check: max abs diff 1.388e-16 -> PASS
+blend0.3             overrides={'anchor_rts_blend': 0.3}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.0004220876594785957, 'ci_lo': 0.0003015743690953429, 'ci_hi': 0.0005356322682454731}
+blend0.7             overrides={'anchor_rts_blend': 0.7}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 3.6284936938833525e-05, 'ci_lo': -7.708600503045846e-05, 'ci_hi': 0.00015816319415482295}
+wrote sweep_<name>.csv -> results/experiment4/run_005/anchor_rts_blend

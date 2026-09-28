@@ -1,0 +1,5 @@
+submitted            overrides={}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.0, 'ci_lo': 0.0, 'ci_hi': 0.0}
+  submitted-configuration reproduction check: max abs diff 1.388e-16 -> PASS
+weight0.25           overrides={'fm_diagonal_weight': 0.25}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.20763379826554573, 'ci_lo': 0.2043212094705059, 'ci_hi': 0.21063217086504507}
+weight1.0            overrides={'fm_diagonal_weight': 1.0}  pooled diff vs submitted: {'pooled_diff_vs_submitted': 0.44876241409193424, 'ci_lo': 0.4448363961977148, 'ci_hi': 0.4524702354704344}
+wrote sweep_<name>.csv -> results/experiment4/run_005/fm_diagonal_weight

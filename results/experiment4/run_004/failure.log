@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task4/scripts/experiment4.py", line 79, in main
+    log = run(base+['sweep','--cache',args.cache,'--forecasts',args.forecasts,'--grid',str(gridfile),'--assert-reference',str(out/'reference/window_scores.csv'),'--out',str(out/setting)], setting)
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task4/scripts/experiment4.py", line 53, in run
+    raise RuntimeError(f'{label} exited {result.returncode}; see retained log')
+RuntimeError: rts_rank exited 1; see retained log

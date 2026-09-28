@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import shutil
 import subprocess
 import sys
 import time
@@ -31,9 +32,9 @@ def sha(p):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--out', required=True)
+    p.add_argument('--reference-existing', help='existing successful evaluate output directory')
     p.add_argument('--cache', default='cache')
     p.add_argument('--forecasts', default='forecasts/timesfm3_mlx')
-    p.add_argument('--data', default='data/raw/humob2026-dataset.tsv')
     args = p.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=False)
@@ -52,24 +53,30 @@ def main():
             raise RuntimeError(f'{label} exited {result.returncode}; see retained log')
         return (out / f'{label}.log').read_text()
     try:
-        inputs = [Path(args.data), *Path(args.cache).glob('*.npz')]
+        inputs = [*Path(args.cache).glob('*.npz')]
         for name in windows.VALIDATION_WINDOW_NAMES:
             inputs.extend(Path(args.forecasts)/f'{prefix}_{name}.npz' for prefix in ('ctx','fc'))
         meta['input_sha256'] = {str(f): sha(f) for f in inputs}
         meta['source_sha256'] = {str(f): sha(f) for f in [Path(__file__), *Path('src/humob26').rglob('*.py')]}
         (out/'packages.txt').write_text(run([sys.executable,'-m','pip','freeze'], 'packages'))
         base = [sys.executable,'-m','humob26']
-        run(base+['evaluate','--cache',args.cache,'--forecasts',args.forecasts,'--arms','final','--out',str(out/'reference')], 'reference')
+        if args.reference_existing:
+            shutil.copytree(args.reference_existing, out/'reference')
+            meta['reused_reference'] = {'path': args.reference_existing, 'sha256': sha(Path(args.reference_existing)/'window_scores.csv')}
+        else:
+            run(base+['evaluate','--cache',args.cache,'--forecasts',args.forecasts,'--arms','final','--out',str(out/'reference')], 'reference')
         ref = pd.read_csv(out/'reference/window_scores.csv')
         assert set(ref.window) == set(windows.VALIDATION_WINDOW_NAMES)
-        assert (ref.arm == 'final').all()
+        assert set(ref.arm) >= {'final'}
+        ref = ref[ref.arm == 'final'].copy()
         assert f'{ref.loc[ref.window == "may_jun", "combined"].iloc[0]:.6f}' == '0.202910'
+        ref.to_csv(out/'reference_final.csv', index=False)
         reports = ['# Experiment 4 sensitivity results', '', 'Lower scores are better. Pooled differences are variant minus submitted; negative means improvement. Intervals use the unchanged 4,000-replicate calendar-date bootstrap. All 16 default validation windows are retained.', '']
         pooled_rows = []
         for setting, grid in GRIDS.items():
             gridfile = out/f'{setting}.json'
             gridfile.write_text(json.dumps(grid, indent=2)+'\n')
-            log = run(base+['sweep','--cache',args.cache,'--forecasts',args.forecasts,'--grid',str(gridfile),'--assert-reference',str(out/'reference/window_scores.csv'),'--out',str(out/setting)], setting)
+            log = run(base+['sweep','--cache',args.cache,'--forecasts',args.forecasts,'--grid',str(gridfile),'--assert-reference',str(out/'reference_final.csv'),'--out',str(out/setting)], setting)
             rows = []
             for name, overrides in grid.items():
                 scores = pd.read_csv(out/setting/f'sweep_{name}.csv')

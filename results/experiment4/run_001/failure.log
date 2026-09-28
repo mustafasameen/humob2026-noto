@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task4/scripts/experiment4.py", line 65, in main
+    assert (ref.arm == 'final').all()
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+AssertionError

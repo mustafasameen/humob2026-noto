@@ -1,0 +1,39 @@
+{
+  "command": [
+    "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-noto/.venv/bin/python",
+    "scripts/experiment4.py",
+    "--out",
+    "results/experiment4/run_002"
+  ],
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "git_commit": "6e7f83450b77a28f82eea72a28828d117ce6fb6f",
+  "environment": {
+    "PYTHONPATH": "src",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "status": "failed",
+  "bootstrap_reps": 4000,
+  "bootstrap_seed": 0,
+  "windows": [
+    "may_jun",
+    "late_jan",
+    "april",
+    "january",
+    "stable_spring",
+    "stable_summer",
+    "stable_late",
+    "roll_0429",
+    "roll_0513",
+    "roll_0527",
+    "roll_0610",
+    "roll_0624",
+    "roll_0708",
+    "roll_0722",
+    "roll_0805",
+    "roll_0819"
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task4/scripts/experiment4.py\", line 58, in main\n    meta['input_sha256'] = {str(f): sha(f) for f in inputs}\n                                    ~~~^^^\n  File \"/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task4/scripts/experiment4.py\", line 26, in sha\n    with Path(p).open('rb') as f:\n         ~~~~~~~~~~~~^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'data/raw/humob2026-dataset.tsv'\n"
+}
