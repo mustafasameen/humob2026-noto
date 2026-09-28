@@ -1,0 +1,2 @@
+evaluation box : 306 days (14 not-a-number) -> results/experiment2/run_004/cache/eval_box.npz
+full grid      : 292 days -> results/experiment2/run_004/cache/full_grid.npz

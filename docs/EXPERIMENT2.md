@@ -95,6 +95,14 @@ The option does not relax the May–June or full-grid checks; it labels the CSVs
 report and figure as provisional. Observed anchor comparisons use only raw data.
 An original author submission is needed to investigate the difference.
 
+After the author changed the submission writer to LF line endings (`06a2eaa`),
+the downloaded dataset was restored and the strict pipeline rerun as `run_004`.
+The dataset SHA-256 matched the prior run exactly. The May–June score was again
+0.202910, the full-grid MD5 again matched, and both generated TSVs were
+byte-identical to `run_002`. The final submission MD5 still differs, so the
+reconstruction and halfway dates remain provisional. See the run index and
+`run_004` failure/provenance files for the exact command, versions and hashes.
+
 Run the independent arithmetic audit with:
 
 ```bash
