@@ -50,7 +50,7 @@ def write_fullgrid_tsv(pred, target_dates, out_path):
     that round to zero are dropped, matching the file's own precision)."""
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as fh:
+    with open(out_path, "w", encoding="utf-8", newline="\n") as fh:
         for d in target_dates:
             f = pred[d]
             od = defaultdict(dict)
@@ -96,7 +96,7 @@ def splice_inbox(model, base_lines, out_path):
 
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as fh:
+    with open(out_path, "w", encoding="utf-8", newline="\n") as fh:
         for d, _ in base_lines:
             fh.write(f"{d}\t{dict(raw[d])}\n")
     return raw
