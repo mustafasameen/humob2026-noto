@@ -1,0 +1,86 @@
+{
+  "01-packages.log": {
+    "sha256": "ecfe543326585f6894288cdf24ea2b59901cd37459c989b245a8b88a906b4493",
+    "bytes": 689
+  },
+  "02-prepare.log": {
+    "sha256": "f054172e0cb41a20245228453366ea90ee9c235780a0e6246d6b4565c45ca41d",
+    "bytes": 171
+  },
+  "03-contexts.log": {
+    "sha256": "a9945f7fdbd070e3eabc0d85d7f81e8d6d9015b2fe9f19dfdc68a96a96b42063",
+    "bytes": 120
+  },
+  "04-reproduction.log": {
+    "sha256": "fd0021b0c940edd57d5e09b560b5cad652589e8b426a2522d96b02b48c3d77a2",
+    "bytes": 355
+  },
+  "05-submit.log": {
+    "sha256": "96b0ca333c86e92ce515c3696f14a555783a55b7980f0b76d57d1ec48f237c9f",
+    "bytes": 183
+  },
+  "cache/eval_box.npz": {
+    "sha256": "faa6135d5c3f4de5f98286cdbc5b89f57b93e2276757961ab4592c88470ce258",
+    "bytes": 1030818
+  },
+  "cache/full_grid.npz": {
+    "sha256": "9bf813825f4b00959f499f85f1301c67357ed82cbac610b8b771df8ebbb1c516",
+    "bytes": 6948297
+  },
+  "check/comparisons.csv": {
+    "sha256": "8c2da1ff0094755ebc687bdc6f97bbc355090cf32f81453ec45d4919e3abaaa3",
+    "bytes": 2535
+  },
+  "check/daily_scores.csv": {
+    "sha256": "7bea188efdb47a9f90107a9eccc8264a6ba57e2c341a1bbc8667af12af7c8dc9",
+    "bytes": 42179
+  },
+  "check/window_scores.csv": {
+    "sha256": "4426f2dbd8ee024727bc555168d8d5e45617002c6f6889cf91b7fd01e264c476",
+    "bytes": 709
+  },
+  "commands.jsonl": {
+    "sha256": "7fa35aeb61a63d0c9985ed0d5af1924b262fe7f7eb1597a96e9e27e63c6b465f",
+    "bytes": 1698
+  },
+  "failure.csv": {
+    "sha256": "17cc52e9d4e7ae3f5245b1cad50d6a7c92e2a1195016e267a641b2676c197a00",
+    "bytes": 373
+  },
+  "failure.log": {
+    "sha256": "beaf47e972524d774318a161ee9ea481b6567598f86daf16fb7abc4651e0254f",
+    "bytes": 348
+  },
+  "forecasts/ctx_may_jun.npz": {
+    "sha256": "7ae404ef1e8ad042d1d62ad04b6f872151f367cda7c306a16539e92c0c4a7f2d",
+    "bytes": 260890
+  },
+  "forecasts/ctx_test_gap.npz": {
+    "sha256": "9a267aa54de6866d775647f2ed406ee8caa407e06e89827817f69e98978e72f7",
+    "bytes": 539457
+  },
+  "forecasts/fc_may_jun.npz": {
+    "sha256": "03e24dd91fa3429a391dae6f1e7eb3991d7ed1e53af4825e4906e1bb23762bb0",
+    "bytes": 1157628
+  },
+  "forecasts/fc_test_gap.npz": {
+    "sha256": "588567d8c55a5ededdef26717a09d7a7438790da0c5d832e3b8e70168ff7320b",
+    "bytes": 1225759
+  },
+  "packages.txt": {
+    "sha256": "ecfe543326585f6894288cdf24ea2b59901cd37459c989b245a8b88a906b4493",
+    "bytes": 689
+  },
+  "run.json": {
+    "sha256": "68f41f7d569ba0a81527fa36a9cc1036af23080fe7e654c503832441e97a115b",
+    "bytes": 4974
+  },
+  "submission.fullgrid.tsv": {
+    "sha256": "de9d4eb204db2f218464f3010320f5f2e0ff00f136933ece81a1494b34c7df71",
+    "bytes": 17107412
+  },
+  "submission.tsv": {
+    "sha256": "9861044ea68a3f24dae842c8323d8a40c43c18a87fb98c19a6d21cc282339b53",
+    "bytes": 17931144
+  }
+}

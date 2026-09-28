@@ -1,0 +1,18 @@
+WARNING: The directory '/Users/mrunal/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.66.0
+-e git+https://github.com/mustafasameen/humob2026-noto.git@2299dd127aaa7d9f999a912a07aaeb7594505787#egg=humob26&subdirectory=../../../humob2026-task2
+iniconfig==2.3.0
+kiwisolver==1.5.1
+matplotlib==3.11.2
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.6
+pillow==12.3.0
+pluggy==1.6.0
+Pygments==2.21.0
+pyparsing==3.3.3
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+six==1.17.0

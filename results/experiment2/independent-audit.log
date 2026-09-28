@@ -1,0 +1,3 @@
+PASS: independently recomputed 3092 observed/reconstructed shares from raw dictionaries;
+all anchor means, ratios, 4000-resample intervals, halfway-date arithmetic and excluded dates match.
+Full-grid MD5: PASS. Final submission MD5: MISMATCH (provisional outputs correctly labelled).

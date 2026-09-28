@@ -1,0 +1,76 @@
+{
+  "command": [
+    "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2/.venv/bin/python",
+    "scripts/experiment2.py",
+    "--data",
+    "data/raw/humob2026-dataset.tsv",
+    "--forecasts",
+    "forecasts/timesfm3_mlx",
+    "--out",
+    "results/experiment2/run_001"
+  ],
+  "status": "failed",
+  "started_utc": "2026-09-28T00:47:48.334636+00:00",
+  "cwd": "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "git_commit": "f15adc6d3daa8bb9927d76c82b3eda28c0d09d5d",
+  "git_status": "?? results/\n",
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "bootstrap_reps": 4000,
+  "bootstrap_seed": 0,
+  "source_sha256": {
+    "src/humob26/__init__.py": "5197c2f9a0615c3fffad6532ced81bba898c52c198b30374463367913a2aa900",
+    "src/humob26/__main__.py": "b52bd2a96952a3e8c43378d79187a4ec280e7df5a4fc4d4f73c257d521cc2126",
+    "src/humob26/anchors.py": "63583ba96957817738023781c95919509ab393890b248510a799a245a29cb0be",
+    "src/humob26/bakeoff.py": "88e6b79e461e3064ed38572d1fef027c58b0e61f9d85330969d348fa691703bf",
+    "src/humob26/bootstrap.py": "5b7465382b88a392245d849bcfaa17e1748aa36035d31bf458518f0bae160170",
+    "src/humob26/calendar.py": "cf8c505406922882d66af62b0beb47fb57ace56065b4b5e0ce4f8c6634b5d03e",
+    "src/humob26/cli.py": "3ed8aadeaf1808808e07b0885fae2e3b024316d98a6cbce03293253e3019b170",
+    "src/humob26/combine.py": "fd816533850e907ba26bdec3af35d170f2cd020d538cee5bd7ae81900a4cc68a",
+    "src/humob26/config.py": "e2bab1347d00db02f7e67db4e8109fc133f298a60d829b4b369b431f18641660",
+    "src/humob26/data.py": "8a28af1a66514b7be6bafea452a5396bd4c41bc134f030043160dc75a6da69bf",
+    "src/humob26/describe.py": "a3c3176d810048fa2437b8e739013cf2aa62501e8c6115c17572d914ddb635c2",
+    "src/humob26/evidence.py": "c932db79f2f5e3edb0bcea7f27a4ea6afdcdb2389a07387a999e2b5d86cad707",
+    "src/humob26/forecast_runner.py": "60dbc4336c9a4e2c65bd2903711703c9e42e44f1515a66f0f7efa4d991d9e6f8",
+    "src/humob26/forecasters/__init__.py": "5f5d8fb51b74b9a802752758cc2910153aa64b0e91a6b3978cd4ecd2dea4ffdb",
+    "src/humob26/forecasters/base.py": "52e88c9b514e83a14200f21b22397306a4d9e34bd42b1e602850ef25a42de19f",
+    "src/humob26/forecasters/chronos2.py": "bbf259d3600563187f3b9da10b4b19b7de97b32e99e1df383fa8239f649f88ef",
+    "src/humob26/forecasters/patchtst_fm.py": "63f990855fcc53538fa911b890fba6c61f1f10636ae3c217bb1cd186450d9b99",
+    "src/humob26/forecasters/planted.py": "e682324f272fd21f24f5a2c2d99fd08d63bad2cefe9ec626c94830ab83f386aa",
+    "src/humob26/forecasters/timesfm3.py": "975c1547da6f9d0d6e1965202601b601922377b8732b8acbaedc3b6cb12e8d53",
+    "src/humob26/foundation.py": "723376b6ae6972f512c123e63341890f6cb0d5552e8abec55f0dc7d9f77a9342",
+    "src/humob26/interp.py": "238dd4fd398d4d4cdf74af5329e2d00abdc520bdff8ec94e2a615438cbb8d4e6",
+    "src/humob26/metric.py": "3eee419a43d4f4c6c79beb660e14301a6add4ff4fc4b7dc21811928e8ff9e64e",
+    "src/humob26/recovery.py": "576d8cc12e10c7ae665d926ebf289029a23a8127d875df8a275a6a3223ca0c7a",
+    "src/humob26/rts.py": "4171fda4712840fd5f37e520ea44a9d400b086e38c678a2e083d1bbd9d190766",
+    "src/humob26/submission.py": "fda650b83f9ff6cac7020df414b0f4b7c74981541db3459c9207e887511c9847",
+    "src/humob26/windows.py": "907b591f23d0b51365186257a95b348e80d1435662e644985e110f24446d7243",
+    "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2/scripts/experiment2.py": "03f3d5cb7633bca84522923b463b0214336a9c014a86cfd410aa08e9d1a1785b"
+  },
+  "inputs": {
+    "data/raw/humob2026-dataset.tsv": {
+      "resolved_path": "/Users/mrunal/Downloads/humob2026-dataset.tsv",
+      "bytes": 49136839,
+      "sha256": "13c37f6a6fe42e6e0ca6f673e364ee5077cea5e2bbfb13ef759bb8d3178ef240"
+    },
+    "forecasts/timesfm3_mlx/fc_may_jun.npz": {
+      "resolved_path": "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2/forecasts/timesfm3_mlx/fc_may_jun.npz",
+      "bytes": 1157628,
+      "sha256": "03e24dd91fa3429a391dae6f1e7eb3991d7ed1e53af4825e4906e1bb23762bb0"
+    },
+    "forecasts/timesfm3_mlx/fc_test_gap.npz": {
+      "resolved_path": "/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2/forecasts/timesfm3_mlx/fc_test_gap.npz",
+      "bytes": 1225759,
+      "sha256": "588567d8c55a5ededdef26717a09d7a7438790da0c5d832e3b8e70168ff7320b"
+    }
+  },
+  "submission.tsv_md5": "e5032f9314ddfb61a0e76db9310932a8",
+  "error": "Traceback (most recent call last):\n  File \"/Users/mrunal/Documents/ChatGPT/look both ways/humob2026-task2/scripts/experiment2.py\", line 166, in main\n    raise ValueError(f'{name} MD5 {actual} differs from reference {expected}')\nValueError: submission.tsv MD5 e5032f9314ddfb61a0e76db9310932a8 differs from reference f19bfbd37dd859e0c0e928ffd0f83c5a\n",
+  "elapsed_seconds": 52.582496584014734,
+  "exit_code": 1
+}

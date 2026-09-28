@@ -31,7 +31,7 @@ decimals, then regenerates the submission. It requires both published MD5s:
 - submission: `f19bfbd37dd859e0c0e928ffd0f83c5a`
 - full-grid intermediate: `be03ccbf5aaebd81a275b3a52953504f`
 
-Any mismatch stops the run before the recovery analysis. Output paths are scoped
+By default, any mismatch stops the run before the recovery analysis. Output paths are scoped
 to the run folder; the original commands and model defaults are preserved.
 
 ## Definitions
@@ -84,3 +84,23 @@ The raw TSV, regenerated TSVs and NPZ files remain local under the existing Git
 ignore rules. Derived CSVs and figures are committed. Confidence intervals
 express uncertainty from observed anchor-day resampling; they do not measure
 uncertainty in the reconstructed path.
+
+## Current run status
+
+`run_001` preserves the strict checksum failure. `run_002` explicitly used
+`--allow-submission-md5-mismatch` to produce provisional reconstruction outputs.
+May–June reproduces 0.202910 and the full-grid MD5 matches, but the final TSV
+MD5 is `e5032f9314ddfb61a0e76db9310932a8`. Its cause is unresolved.
+The option does not relax the May–June or full-grid checks; it labels the CSVs,
+report and figure as provisional. Observed anchor comparisons use only raw data.
+An original author submission is needed to investigate the difference.
+
+Run the independent arithmetic audit with:
+
+```bash
+.venv/bin/python scripts/verify_experiment2.py \
+  data/raw/humob2026-dataset.tsv results/experiment2/run_002
+```
+
+The checked-in findings are in `results/experiment2/FINDINGS.md`; the run index
+and additional execution records are in that directory's `README.md`.

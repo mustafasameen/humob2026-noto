@@ -1,0 +1,20 @@
+{
+  "mapping_cells": 1476,
+  "calendar_dates": 366,
+  "groups": 9,
+  "observed_days": 292,
+  "municipality_reconstructed_days": 58,
+  "january_days": 8,
+  "april_days": 28,
+  "fixed_daily_total": 189190.25085714285,
+  "total_min": 189190.2508571428,
+  "total_max": 189190.2508571429,
+  "date_coverage": "passed",
+  "share_arithmetic": "passed",
+  "halfway_first_crossings": "passed",
+  "reproduction_combined": 0.2029103543624607,
+  "submission_md5": "e5032f9314ddfb61a0e76db9310932a8",
+  "fullgrid_md5": "be03ccbf5aaebd81a275b3a52953504f",
+  "submission_md5_matches": false,
+  "expected_submission_md5": "f19bfbd37dd859e0c0e928ffd0f83c5a"
+}

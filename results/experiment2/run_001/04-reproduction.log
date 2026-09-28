@@ -1,0 +1,3 @@
+may_jun        april_mean=0.221445  novdec_mean=0.229462  anchor=0.206217  anchor_rts=0.203695  anchor_rts_fullgrid=0.205902  anchor_rts_eb=0.203368  anchor_rts_fm=0.203032  final=0.202910
+wrote results/experiment2/run_001/check/daily_scores.csv, results/experiment2/run_001/check/window_scores.csv
+wrote results/experiment2/run_001/check/comparisons.csv

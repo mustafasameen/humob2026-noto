@@ -1,0 +1,28 @@
+01-packages: complete
+02-prepare: complete
+03-contexts: complete
+04-reproduction: complete
+05-submit: complete
+WARNING: final submission MD5 mismatch; reconstruction outputs are PROVISIONAL
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/mrunal/.cache/fontconfig
+	/Users/mrunal/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/mrunal/.cache/fontconfig
+	/Users/mrunal/.fontconfig
+Matplotlib is building the font cache; this may take a moment.
+municipality  january_mean_share  april_mean_share  change_share  april_over_january  ratio_ci_lo  ratio_ci_hi ratio_status  undefined_bootstrap_replicates  january_observed_days  april_observed_days  halfway_share halfway_date               halfway_status  reconstructed_days  bootstrap_reps  bootstrap_seed halfway_reference_status
+       nanao            0.012710          0.013455      0.000745            1.058621     1.037999     1.081931      defined                               0                      8                   28       0.013083     20240213                      reached                  58            4000               0 provisional_md5_mismatch
+      wajima            0.002645          0.003324      0.000679            1.256797     1.196550     1.322001      defined                               0                      8                   28       0.002984     20240213                      reached                  58            4000               0 provisional_md5_mismatch
+        suzu            0.002878          0.003038      0.000160            1.055510     0.999819     1.125750      defined                               0                      8                   28       0.002958     20240201                      reached                  58            4000               0 provisional_md5_mismatch
+     anamizu            0.002640          0.003125      0.000485            1.183592     1.142298     1.228009      defined                               0                      8                   28       0.002882     20240220                      reached                  58            4000               0 provisional_md5_mismatch
+    noto_cho            0.003001          0.003262      0.000261            1.086825     1.042987     1.138965      defined                               0                      8                   28       0.003131     20240214                      reached                  58            4000               0 provisional_md5_mismatch
+       shika            0.004929          0.005327      0.000398            1.080840     1.044671     1.121329      defined                               0                      8                   28       0.005128     20240213                      reached                  58            4000               0 provisional_md5_mismatch
+    nakanoto            0.007238          0.007021     -0.000218            0.969925     0.952252     0.988089      defined                               0                      8                   28       0.007129     20240201                      reached                  58            4000               0 provisional_md5_mismatch
+       hakui            0.001850          0.001930      0.000081            1.043669     1.010519     1.076601      defined                               0                      8                   28       0.001890     20240219                      reached                  58            4000               0 provisional_md5_mismatch
+outside_grid            0.135779          0.145858      0.010079            1.074230     1.042367     1.106364      defined                               0                      8                   28       0.140819          NaN outside_bucket_not_predicted                   0            4000               0           not_applicable
+Experiment 2 provisional: results/experiment2/run_002
