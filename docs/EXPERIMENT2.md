@@ -19,10 +19,10 @@ OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 OMP_NUM_THREADS=1 \
 
 The output directory must be new. A failed attempt is retained and cannot be
 overwritten. Choose `run_002`, etc. for a new attempt. The supplied forecast
-directory must contain `fc_may_jun.npz` and `fc_test_gap.npz` from the
-[forecasts-timesfm3 release](https://github.com/mustafasameen/humob2026-noto/releases/tag/forecasts-timesfm3),
-asset `timesfm3_mlx_forecasts.tar.gz` (SHA-256
-`9d269e31d397ef36b8e6fc97f53365b9b6f3f8eb7cf37e825549ef328f659826`).
+directory must contain the paper's TimesFM-3 forecasts `fc_may_jun.npz` and `fc_test_gap.npz` (MLX
+build). They are derived from the challenge data, so they are not distributed with the code; the authors
+share them on request with users of the challenge data. Forecasts made with `python -m humob26 forecast`
+differ slightly and do not pass the reproduction checks below.
 
 The runner prepares fresh caches from the raw data and regenerates the two
 contexts, runs the documented May–June evaluation and checks 0.202910 to six
