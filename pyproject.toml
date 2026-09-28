@@ -16,6 +16,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
+recovery = ["matplotlib"]
 # Each forecaster adapter's own framework, needed only to actually run
 # `forecast --model ...` with that model; the core package (and every other
 # command) installs and runs with numpy/pandas alone. Install the extra
