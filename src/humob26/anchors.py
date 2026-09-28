@@ -243,7 +243,10 @@ def recovery_weight(u, table=None):
 def gap_weight(shape, u, recovery_table=None):
     """Weight on the before-anchor at fraction `u` of the gap elapsed, for
     one of the supported blend shapes: linear, sqrt (fast early recovery
-    that then flattens), square, or the recovery-weight curve above."""
+    that then flattens), square, the recovery-weight curve above, or after
+    (the after-anchor level throughout: no before-anchor, no curve)."""
+    if shape == "after":
+        return 0.0 * u
     return {"linear": 1 - u, "sqrt": 1 - np.sqrt(u), "square": (1 - u) ** 2,
             "tau_avg": recovery_weight(u, recovery_table)}[shape]
 

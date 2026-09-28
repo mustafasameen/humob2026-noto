@@ -154,6 +154,15 @@ def build_novdec_mean(days, window, na):
     return constant_baseline(days, window.target, window.before, na, by_dow=False)
 
 
+def build_after_mean_dow(days, window, na, keys, calib, settings=None):
+    """The after-anchor mean with `anchor`'s day-type and holiday factors:
+    `anchor` with the whole gap at the after-anchor level, so the two differ
+    only in the before-anchor and the recovery curve."""
+    s = settings or DEFAULT_SETTINGS
+    return interp_two_anchor(days, window.target, window.before, window.after, keys, calib, na,
+                             shape="after", shrink=s.daytype_shrink, curve_span=s.curve_span)
+
+
 def build_anchor(days, window, na, keys, calib, settings=None):
     """Two-anchor interpolation alone: tau-averaged recovery weight on the
     diagonal, square-root weight off it, fixed-shrink day-type factors."""
@@ -232,7 +241,7 @@ def build_final(days, window, na, keys, train, calib, forecast_diag, settings=No
                         weights=[s.fm_diagonal_weight, 1.0 - s.fm_diagonal_weight, 1.0])
 
 
-ARM_NAMES = ("april_mean", "novdec_mean", "anchor", "anchor_rts",
+ARM_NAMES = ("april_mean", "novdec_mean", "after_mean_dow", "anchor", "anchor_rts",
             "anchor_rts_fullgrid", "anchor_rts_eb", "anchor_rts_fm", "final")
 # Arms that need a foundation-model diagonal forecast to be built.
 ARMS_NEEDING_FORECAST = ("anchor_rts_fm", "final")

@@ -82,6 +82,8 @@ class Pipeline:
             keys, train, calib = self.full_ctx(window)
             return combine.build_anchor_rts_fullgrid(self.full_days, window, self.na_full, keys, train, calib, s)
         keys, train, calib = self.eval_ctx(window)
+        if arm == "after_mean_dow":
+            return combine.build_after_mean_dow(self.days, window, self.na, keys, calib, s)
         if arm == "anchor":
             return combine.build_anchor(self.days, window, self.na, keys, calib, s)
         if arm == "anchor_eb":
