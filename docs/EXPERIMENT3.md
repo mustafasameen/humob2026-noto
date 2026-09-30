@@ -10,7 +10,7 @@ python scripts/experiment3.py --out results/experiment3/run_NEW \
   --weights models/timesfm-3.0-pytorch --device cpu
 ```
 
-The runner first keeps the full PyTorch forecasts as the reference. It then runs six one-sided cuts: forward 14, 28, 56 days and backward 30, 60, 120 days. It uses the four named windows and all nine rolling windows from the experiment instructions, the original `compare-slot` scorer and its 4,000-replicate bootstrap. A separate comparison measures PyTorch full context against the released MLX forecasts. Each run retains its command, log, package versions, input/source and forecast hashes, and failed attempts. The model weights and generated NPZ files stay local.
+The runner first keeps the full PyTorch forecasts as the reference. It then runs six one-sided cuts: forward 14, 28, 56 days and backward 30, 60, 120 days. It uses the four named windows and all nine rolling windows, the original `compare-slot` scorer and its 4,000-replicate bootstrap. A separate comparison measures PyTorch full context against the paper's MLX forecasts. Each run retains its command, log, package versions, input/source and forecast hashes, and failed attempts. The model weights and generated NPZ files stay local.
 
 The checkpoint comes from Google's [official model repository](https://huggingface.co/google/timesfm-3.0-pytorch) and is subject to its noncommercial weights license. The exact downloaded revision and checksums are recorded in `results/experiment3/weights-revision.json` and `weights-checksums.json`.
 

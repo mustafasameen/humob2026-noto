@@ -1,6 +1,6 @@
 # Experiment 4: sensitivity of model constants
 
-Run `scripts/experiment4.py` with the prepared cache and released MLX forecasts. The script runs the unchanged `humob26 sweep` command for each of the four documented settings, always including `submitted: {}` and asserting the reference scores. It selects the `final` rows of `evaluate/window_scores.csv` for that assertion because `evaluate` also emits other model arms.
+Run `scripts/experiment4.py` with the prepared cache and the paper's MLX forecasts. The script runs the unchanged `humob26 sweep` command for each of the four documented settings, always including `submitted: {}` and asserting the reference scores. It selects the `final` rows of `evaluate/window_scores.csv` for that assertion because `evaluate` also emits other model arms.
 
 ```bash
 PYTHONPATH=src OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \

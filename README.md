@@ -1,4 +1,8 @@
-# humob26
+# Look Both Ways: Reconstructing Two Hidden Months of Post-Earthquake Mobility
+
+Code for the paper by Mustafa Sameen, Mrunal Vibhute and Xilei Zhao (University of Florida) at the
+ACM SIGSPATIAL International Workshop on the Human Mobility Prediction Challenge (HuMob '26). The
+Python package is `humob26`.
 
 A gap-filling pipeline for the HuMob Challenge 2026: given daily
 origin-destination (OD) flow counts on a 100 x 70 grid of 2 km cells for
@@ -161,6 +165,17 @@ exact commands and `docs/EXTENDING.md` for how to add a new forecaster.
 
 ## Citation
 
-Mustafa Sameen, Mrunal Vibhute and Xilei Zhao. Look Both Ways: Reconstructing
-Two Hidden Months of Post-Earthquake Mobility. HuMob Challenge 2026 Workshop
-at ACM SIGSPATIAL 2026, Riverside, CA, USA.
+Mustafa Sameen, Mrunal Vibhute, and Xilei Zhao. 2026. Look Both Ways: Reconstructing Two Hidden Months of
+Post-Earthquake Mobility. In ACM SIGSPATIAL International Workshop on the Human Mobility Prediction
+Challenge (HuMob '26), November 3, 2026, Riverside, CA, USA. ACM, New York, NY, USA.
+
+```bibtex
+@inproceedings{sameen2026lookbothways,
+  author    = {Sameen, Mustafa and Vibhute, Mrunal and Zhao, Xilei},
+  title     = {Look Both Ways: Reconstructing Two Hidden Months of Post-Earthquake Mobility},
+  booktitle = {ACM SIGSPATIAL International Workshop on the Human Mobility Prediction Challenge (HuMob '26)},
+  year      = {2026},
+  address   = {Riverside, CA, USA},
+  publisher = {ACM}
+}
+```

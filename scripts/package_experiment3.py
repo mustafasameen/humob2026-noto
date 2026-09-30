@@ -33,7 +33,7 @@ Commands:
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -e '.[test]' '/private/tmp/humob-timesfm-upstream[torch]' > results/experiment3/install.log 2>&1
+.venv/bin/pip install -e '.[test]' '/path/to/timesfm[torch]' > results/experiment3/install.log 2>&1
 .venv/bin/python scripts/download_timesfm3.py > results/experiment3/download.log 2>&1
 .venv/bin/python scripts/download_timesfm3.py > results/experiment3/download-retry.log 2>&1
 .venv/bin/python scripts/experiment3.py --out results/experiment3/run_001 > results/experiment3/run_001-console.log 2>&1
